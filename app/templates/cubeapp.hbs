@@ -6,9 +6,51 @@
   </header>
 
   <section id="main">
- 
-    
+    <div>
+      <label>Question 1: What is your name?</label>
+      {{input value=questionOneAnswer}}
+    </div>
+
+    <div>
+      <label>Question 2: What is your animal?</label>
+      {{! see here: http://emberjs.com/api/classes/Ember.Select.html}}
+      {{view 'select' content=questionTwoChoices value=questionTwoAnswer}}
+    </div>
+
+    <div>
+      {{#if questionTwoIsOther}}
+        <label>What kind of animal are you then?</label>
+        {{input value=questionTwoAlternative}}
+      {{/if}}
+    </div>
+
+    <div>
+      <label>Question 3: What is your number?</label>
+      {{input value=questionThreeAnswer type='range'}}
+    </div>
+
+    <button {{action 'saveAnswers'}}>
+      Save Answers
+    </button>
   </section>
+
+  <section id="past-answers">
+    <table border=1>
+      <tr>
+        <th>Name</th>
+        <th>Animal</th>
+        <th>Number</th>
+      </tr>
+    {{#each answer in pastAnswers}}
+      <tr>
+        <td>{{answer.name}}</td>
+        <td>{{answer.animal}}</td>
+        <td>{{answer.number}}</td>
+      </tr>
+    {{/each}}
+  </table>
+  </section>
+
 
   <footer id="footer">
   <li>does this work</li>
