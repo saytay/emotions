@@ -4,16 +4,29 @@ export default Ember.Controller.extend({
   help: 'Variables on your controller are accessible in the template.',
 
   questionOneAnswer: null,
+  questionOneChoices: ['excited', 'relaxed', 'sad', 'angry', 'other'],
+  questionOneAlternative: null,
 
-  questionTwoAnswer: null,
-  questionTwoChoices: ['cat', 'dog', 'other'],
-  questionTwoAlternative: null,
+  questionOneIsOther: Ember.computed(function(){
+    return this.get('questionOneAnswer') == 'other';
+  }).property('questionOneAnswer'),
 
-  questionTwoIsOther: Ember.computed(function(){
-    return this.get('questionTwoAnswer') == 'other';
-  }).property('questionTwoAnswer'),
+  questionTwoAnswer: 0,
 
-  questionThreeAnswer: 0,
+  questionThreeAnswer: null,
+
+  questionFourAnswer: null,
+
+  questionFiveAnswer: null,
+
+  questionSixAnswer: null,
+  questionSevenAnswer: null,
+  questionEightAnswer: null,
+  questionNineAnswer: null,
+  questionTenAnswer: null,
+  questionElevenAnswer: null,
+  questionTwelveAnswer: null,
+
 
 
   pastAnswers: [],
@@ -21,19 +34,38 @@ export default Ember.Controller.extend({
 
   actions: {
     saveAnswers: function(){
-      var name = this.get('questionOneAnswer');
-      if (this.get('questionTwoAnswer') == 'other'){
-        var animal = this.get('questionTwoAlternative');
+      if (this.get('questionOneAnswer') == 'other'){
+        var name = this.get('questionOneAlternative');
       } else {
-        var animal = this.get('questionTwoAnswer');
+        var name = this.get('questionOneAnswer');
       }
-      var number = this.get('questionThreeAnswer');
+      var range = this.get('questionTwoAnswer');
+      var reason = this.get('questionThreeAnswer');
+      var interpretation = this.get('questionFourAnswer');
+      var bodyChanges = this.get('questionFiveAnswer');
+      var bodyLanguage = this.get('questionSixAnswer');
+      var urge = this.get('questionSevenAnswer');
+      var reaction = this.get('questionEightAnswer');
+      var effect = this.get('questionNineAnswer');
+      var purpose = this.get('questionTenAnswer');
+      var secondLook = this.get('questionElevenAnswer');
+      var summary = this.get('questionTwelveAnswer');
+
 
       this.get('pastAnswers').addObject(
         {
           'name': name,
-          'animal': animal,
-          'number': number
+          'range': range,
+          'reason': reason,
+          'interpretation': interpretation,
+          'bodyChanges': bodyChanges,
+          'bodyLanguage': bodyLanguage,
+          'urge': urge,
+          'reaction': reaction,
+          'effect': effect,
+          'purpose': purpose,
+          'secondLook': secondLook,
+          'summary': summary
         }
       );
     }
