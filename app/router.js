@@ -6,9 +6,11 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-	this.resource('cubeapp', { path: '/' }, function(){
-		
-	});
+  // each route corresponds with a .hbs file in the templates directory
+	this.route('cubeapp', { path: '/' });
+  this.route('login');
+  this.route('old-worksheet');
+  this.route('setting-menu');
 });
 
 export default Router;
