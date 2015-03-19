@@ -1,24 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="alert alert-success">
+        <p>
+          Using the
+          <a href="http://getbootstrap.com/css/#grid">
+            Bootsrap Grid System
+          </a>
+          you can layout columns on your pages really easily.
+        </p>
 
-<ul id="menu">
-  <li>
-    {{#link-to 'login'}}
-      Login
-    {{/link-to}}
-  </li>
-  <li>
-    {{#link-to 'cubeapp'}}
-      Cube App
-    {{/link-to}}
-  </li>
-  <li>
-    {{#link-to 'old-worksheet'}}
-      Old Worksheet
-    {{/link-to}}
-  </li>
-</ul>
-
-{{outlet}}
-
-<footer id="info">
-  <p>Emotion Regulation Worksheet</p>
-</footer>
+        <p>
+        You can also get nice looking components really quickly. For example:
+        </p>
+        <ul>
+          <li>
+            <a href="http://getbootstrap.com/components/#alerts">
+              Alert boxes
+            </a>
+          </li>
+          <li>
+            <a href="http://getbootstrap.com/components/#navs">
+              Navigation Bars
+            </a>
+          </li>
+          <li>
+            <a href="http://getbootstrap.com/css/#forms">
+              Forms
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+        <ul class="nav nav-pills nav-stacked">
+          <li>
+            {{#link-to 'login'}}
+              Login
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'cubeapp'}}
+              Cube App
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'old-worksheet'}}
+              Old Worksheet
+            {{/link-to}}
+          </li>
+        </ul>
+    </div>
+    <div class="col-sm-9">
+      {{outlet}}
+    </div>
+  </div>
+</div>
