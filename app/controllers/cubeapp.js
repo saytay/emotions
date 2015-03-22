@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
   questionTwoAnswer: 0,
 
   questionThreeAnswer: null,
-
+  
   questionFourAnswer: null,
 
   questionFiveAnswer: null,
@@ -26,6 +26,7 @@ export default Ember.Controller.extend({
   questionTenAnswer: null,
   questionElevenAnswer: null,
   questionTwelveAnswer: null,
+
 
 
 

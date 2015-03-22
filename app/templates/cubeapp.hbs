@@ -5,12 +5,12 @@
 
   </header>
 
-  <form>
+  <form class="form-group">
      <p> Select a current or recent emotional reaction and fill out as much of this sheet as you can. If the prompting event for the emotion you are working on is another emotion that occurred first (for example, feeling afraid prompted getting angry at yourself), then fill out a second homework sheet for that first emotion. Write on a separate page if you need more room.  </P>
 
     <div>
 
-    <div class="form-group">
+    <div class="form-inline">
       <label>Question 1: Emotion: </label>
       {{! see here: http://emberjs.com/api/classes/Ember.Select.html}}
       {{view 'select' content=questionOneChoices value=questionOneAnswer class="form-control"}}
@@ -19,7 +19,7 @@
     <div>
       {{#if questionOneIsOther}}
         <label>What emotion are you feeling?</label>
-        {{input value=questionOneAlternative}}
+        {{textarea class="form-control" rows="1" value=questionOneAlternative}}
       {{/if}}
     </div>
 
@@ -30,77 +30,80 @@
 
     <div>
       <label>Question 3: Prompting event for my emotion: (who, what, when, where) What started the emotion? </label>
-      {{input value=questionThreeAnswer}}
+
+      {{textarea class="form-control" rows="3" value=questionThreeAnswer}}
     </div>
 
     <div>
       <label>Question 4: Interpretations (beliefs, assumptions, appraisals) of the situation? </label>
-      {{input value=questionFourAnswer}}
+      {{textarea class="form-control" rows="3" value=questionFourAnswer}}
     </div>
 
     <div>
       <label>Question 5: Body changes and sensing: What am I feeling in my body? </label>
-      {{input value=questionFiveAnswer}}
+
+      {{textarea class="form-control" rows="3" value=questionFiveAnswer}}
+      
     </div>
 
     <div>
       <label>Question 6: Body Language: What is my facial expression? Posture? Gestures? </label>
-      {{input value=questionSixAnswer}}
+      {{textarea class="form-control" rows="3" value=questionSixAnswer}}
     </div>
 
     <div>
       <label>Question 7: Action Urges: What do I feel like doing? What do I really want to say? </label>
-      {{input value=questionSevenAnswer}}
+      {{textarea class="form-control" rows="3" value=questionSevenAnswer}}
     </div>
 
     <div>
       <label>Question 8: What I said or did in the situation (be specific) </label>
-      {{input value=questionEightAnswer}}
+      {{textarea class="form-control" rows="3" value=questionEightAnswer}}
     </div>
 
     <div>
       <label>Question 9: What after effect does the emotion have on me (my state of mind, other emotions, behaviour, thoughts, memory, body, etc.)? </label>
-      {{input value=questionNineAnswer}}
+      {{textarea class="form-control" rows="3" value=questionNineAnswer}}
     </div>
 
     <div>
       <label>Question 10: Function of emotion What purpose did the emotion serve (communicate, force me to pay attention, motivate me, cover another emotion)?  </label>
-      {{input value=questionTenAnswer}}
+      {{textarea class="form-control" rows="3"value=questionTenAnswer}}
     </div>
 
     <div>
       <label>Question 11: Taking a second look is there another way to interpret this situation? If so, how would it affect me?  </label>
-      {{input value=questionElevenAnswer}}
+      {{textarea class="form-control" rows="3" value=questionElevenAnswer}}
     </div>
 
     <div>
       <label>Question 12: Summary What did I learn about myself from doing this Emotion Sheet? </label>
-      {{input value=questionTwelveAnswer}}
+      {{textarea class="form-control" rows="3" value=questionTwelveAnswer}}
     </div>
 
-    <button {{action 'saveAnswers'}}>
+    <button type="button" class="btn btn-default" {{action 'saveAnswers'}}>
       Save Answers
     </button>
 
 
   </form>
 
-  <section id="past-answers">
+<section id="past-answers">
     <table border=1>
-      <tr>
+      <th>
         <th>Emotion</th>
-        <th>Range</th>
+        <th>Intensity</th>
         <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-        <th>Event</th>
-      </tr>
+        <th>Interpretations</th>
+        <th>Body Changes</th>
+        <th>Body Language</th>
+        <th>Urges</th>
+        <th>Reaction</th>
+        <th>Effect</th>
+        <th>Purpose</th>
+        <th>Second Look</th>
+        <th>Summary</th>
+      </th>
     {{#each answer in pastAnswers}}
       <tr>
         <td>{{answer.name}}</td>
@@ -119,7 +122,6 @@
     {{/each}}
   </table>
   </section>
-
 
   <footer id="footer">
 
