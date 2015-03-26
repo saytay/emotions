@@ -35,10 +35,10 @@
 
 {{!The SoundCloud API part}}
 <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
-<iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=http://api.soundcloud.com/users/1539950/favorites" width="30%" height="10%" scrolling="no" frameborder="no"></iframe>
+<iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/83946902&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=true&amp;buying=false&amp;liking=false&amp;sharing=false" width="30%" height="50%" scrolling="no" frameborder="no"></iframe>
 <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
 <script type="text/javascript">
-  (function(){
+(function(){
     var widgetIframe = document.getElementById('sc-widget'),
         widget       = SC.Widget(widgetIframe);
 
@@ -57,7 +57,6 @@
       widget.setVolume(50);
       // get the value of the current position
     });
-
   }());
 </script>
 {{!End of the SoundCloud API part}}
