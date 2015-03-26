@@ -36,6 +36,6 @@
     "glob": "^4.0.5"
   },
   "dependencies": {
-    "ember-cli": "^0.1.12"
+    "ember-cli": "^0.1.15"
   }
 }
