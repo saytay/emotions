@@ -1,1 +1,12 @@
-Login contents goes here.
+<div class='intro'>
+  {{intro}}
+</div>
+
+{{#if isClicked}}
+  <div class='body'>{{body}}</div>
+  <button {{action 'Nothing'}}>Link to your Dropbox Account</button>
+
+{{else}}
+<button {{action 'Login'}}>Link to your Dropbox Account</button>
+
+{{/if}}
