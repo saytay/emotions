@@ -4,7 +4,17 @@
 
 {{#if isClicked}}
   <div class='body'>{{body}}</div>
-  <button {{action 'Nothing'}}>Link to your Dropbox Account</button>
+  <button {{action 'Nothing'}}>Cancel</button>
+  <button {{action 'addMilk'}}>Add Milk</button>
+  <button {{action 'updateTasks'}}>Update List</button>
+
+  <ul>
+    {{#each task in tasks}}
+      <li>
+        {{task.taskname}}
+      </li>
+    {{/each}}
+  </ul>
 
 {{else}}
 <button {{action 'Login'}}>Link to your Dropbox Account</button>
